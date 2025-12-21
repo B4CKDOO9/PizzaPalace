@@ -1,71 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hr">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pizza Place</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f7f3e9;
-        }
-
-        header {
-            background: #d62828;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-            font-size: 2rem;
-        }
-
-        .hero {
-            text-align: center;
-            padding: 60px 20px;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-        }
-
-        .order-section {
-            margin-top: 40px;
-            text-align: center;
-        }
-
-        .order-btn {
-            background: #f77f00;
-            border: none;
-            padding: 15px 30px;
-            font-size: 1.2rem;
-            cursor: pointer;
-            border-radius: 6px;
-            color: white;
-        }
-
-        .order-btn:hover {
-            background: #ff9500;
-        }
-    </style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pizza Palace</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="images/favicon-home.svg" type="image/svg+xml">
 </head>
 
 <body>
-    <header>Pizza Palace</header>
+    <div class="page-grid">
+        <header class="site-header">
+            <h1>Pizza Palace</h1>
+        </header>
 
-    <section class="hero">
-        <h1>Fresh. Hot. Delicious.</h1>
-        <p>Order your favorite pizza in seconds.</p>
-    </section>
+        <nav class="site-nav" aria-label="Glavna navigacija">
+            <ul>
+                <li><a href="index.html">Početna</a></li>
+                <li><a href="menu.html">Jelovnik</a></li>
+                <li><a href="location.html">Lokacija</a></li>
+                <li><a href="hours.html">Radno vrijeme</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+            </ul>
+        </nav>
 
-    <section class="order-section">
-        <button class="order-btn">Order Now</button>
-    </section>
+        <main class="site-main">
+            <section class="hero">
+                <div class="hero-content">
+                    <h2>Svježe. Vruće. Ukusno.</h2>
+                    <p>Brza narudžba omiljene pizze. Pogledajte naš jelovnik i informacije o lokaciji i radnom vremenu.
+                    </p>
+                    <p class="cta"><a class="order-btn" href="menu.html">Pogledaj jelovnik</a></p>
+                </div>
+                <figure class="hero-image">
+                    <img src="images/hero.svg" alt="Velika pizza na drvenoj dasci" />
+                </figure>
+            </section>
+            <section class="highlights">
+                <article>
+                    <h4>Brza dostava</h4>
+                    <p>Najbolje sastojke i brzu dostavu u vašem gradu.</p>
+                </article>
+                <article>
+                    <h4>Kalorije u jelovniku</h4>
+                    <p>Svaka pizza u jelovniku ima navedene kalorijske vrijednosti za one koji vode računa o unosu.</p>
+                </article>
+                <article>
+                    <h4>Kvaliteta</h4>
+                    <p>Sve pizze pripremamo od svježih sastojaka i domaćeg tijesta.</p>
+                </article>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <p>Filip Smolec — 2025</p>
+        </footer>
+    </div>
 </body>
 
 </html>
