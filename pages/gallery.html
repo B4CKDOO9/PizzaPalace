@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shark's Pizza – Galerija</title>
+  <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .gallery-item {
+      background: white;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      transition: transform 0.25s, box-shadow 0.25s;
+      position: relative;
+    }
+    .gallery-item:hover {
+      transform: scale(1.04);
+      box-shadow: 0 16px 40px rgba(10, 61, 107, 0.25);
+    }
+    .gallery-item:hover .gallery-caption {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .gallery-emoji {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 6rem;
+      height: 200px;
+      background: linear-gradient(135deg, var(--ocean-foam), var(--ocean-light));
+    }
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0; right: 0;
+      background: rgba(10, 61, 107, 0.85);
+      color: white;
+      padding: 12px 16px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s;
+      border-radius: 0 0 var(--radius) var(--radius);
+    }
+    /* Span wide / tall items */
+    .gallery-item.wide { grid-column: span 2; }
+    .gallery-item.tall .gallery-emoji { height: 340px; }
+    @media (max-width: 600px) {
+      .gallery-item.wide { grid-column: span 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img class="banner" src="../images/banner.png" alt="Shark's Pizza banner" />
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="../index.html">🏠 Početna</a></li>
+      <li><a href="menu.html">🍕 Meni</a></li>
+      <li><a href="about.html">🦈 O nama</a></li>
+      <li><a href="gallery.html" class="active">📸 Galerija</a></li>
+      <li><a href="order.html">🛒 Naruči</a></li>
+      <li><a href="contact.html">📞 Kontakt</a></li>
+      <li><a href="deals.html">🏷️ Akcije</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1 class="section-title">📸 <span>Galerija</span></h1>
+    <p style="text-align:center; color:var(--text-mid); margin-bottom:40px; font-size:1.05rem;">
+      Pogledaj naše pizze, restoran i tim – svježe iz naše kuhinje!
+    </p>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item wide">
+        <div class="gallery-emoji" style="font-size:4rem; background: linear-gradient(135deg,#1a6fa8,#5bc8f5);">
+          🦈&nbsp;&nbsp;🍕
+        </div>
+        <div class="gallery-caption">Naše najdraže duo – morski pas i pizza!</div>
+      </div>
+
+      <div class="gallery-item tall">
+        <div class="gallery-emoji">🍕</div>
+        <div class="gallery-caption">Great White pizza iz pećnice</div>
+      </div>
+
+      <div class="gallery-item tall">
+        <div class="gallery-emoji">🌊</div>
+        <div class="gallery-caption">Inspiracija – jadranska obala</div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-emoji">👨‍🍳</div>
+        <div class="gallery-caption">Chef Marco u akciji</div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-emoji">🔥</div>
+        <div class="gallery-caption">Peć na drva – srce pizzerije</div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-emoji">🥗</div>
+        <div class="gallery-caption">Svježi sastojci svaki dan</div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-emoji">🫙</div>
+        <div class="gallery-caption">Domaći rajčičin umak</div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-emoji">🍷</div>
+        <div class="gallery-caption">Selekcija lokalnih vina</div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-emoji">🎉</div>
+        <div class="gallery-caption">Naša pizzeria – savršeno mjesto za proslave</div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p><strong>Shark's Pizza</strong> – Gdje okean susreće tijesto 🌊🍕</p>
+    <p>© <span id="year"></span> | Izradio: <em>Ime Prezime</em></p>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </footer>
+
+</body>
+</html>

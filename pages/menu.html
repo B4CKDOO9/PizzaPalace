@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shark's Pizza – Meni</title>
+  <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .menu-category {
+      margin-bottom: 56px;
+    }
+    .badge {
+      display: inline-block;
+      background: var(--pizza-red);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 20px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+    .badge.veg { background: #38a169; }
+    .badge.hot { background: #e53e3e; }
+    .badge.new { background: var(--pizza-gold); color: var(--drip-black); }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img class="banner" src="../images/banner.png" alt="Shark's Pizza banner" />
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="../index.html">🏠 Početna</a></li>
+      <li><a href="menu.html" class="active">🍕 Meni</a></li>
+      <li><a href="about.html">🦈 O nama</a></li>
+      <li><a href="gallery.html">📸 Galerija</a></li>
+      <li><a href="order.html">🛒 Naruči</a></li>
+      <li><a href="contact.html">📞 Kontakt</a></li>
+      <li><a href="deals.html">🏷️ Akcije</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1 class="section-title">Naš <span>Meni</span></h1>
+
+    <!-- PIZZE -->
+    <section class="menu-category">
+      <h2 style="font-family:'Pacifico',cursive; color:var(--ocean-dark); margin-bottom:24px; font-size:1.6rem;">🍕 Pizze</h2>
+      <div class="card-grid">
+
+        <article class="card">
+          <div class="card-img">🦈🍕</div>
+          <div class="card-body">
+            <h3 class="card-title">Great White <span class="badge new">NOVO</span></h3>
+            <p class="card-text">Bijeli umak, mozzarella, piletina, rukola, parmezan, češnjak</p>
+            <span class="card-price">9,90 €</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img">🌊🍕</div>
+          <div class="card-body">
+            <h3 class="card-title">Deep Sea</h3>
+            <p class="card-text">Plodovi mora, maslinovo ulje, kapari, limun, peršin</p>
+            <span class="card-price">11,50 €</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img">🌶️🍕</div>
+          <div class="card-body">
+            <h3 class="card-title">Shark Attack <span class="badge hot">🔥 LJUTO</span></h3>
+            <p class="card-text">Ljuta salama, jalapeño, dimljeni sir, crveni luk, cherry rajčice</p>
+            <span class="card-price">10,50 €</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img">🌿🍕</div>
+          <div class="card-body">
+            <h3 class="card-title">Ocean Garden <span class="badge veg">VEGANSKA</span></h3>
+            <p class="card-text">Tikvice, paprika, šampinjoni, masline, rukola, biljni sir</p>
+            <span class="card-price">9,00 €</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img">🥓🍕</div>
+          <div class="card-body">
+            <h3 class="card-title">Hammerhead</h3>
+            <p class="card-text">Šunka, slanina, kukuruz, mozzarella, domaći rajčičin umak</p>
+            <span class="card-price">8,90 €</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img">👑🍕</div>
+          <div class="card-body">
+            <h3 class="card-title">Apex Predator</h3>
+            <p class="card-text">Sve meso! Salama, šunka, slanina, mljeveno meso, chorizo</p>
+            <span class="card-price">13,00 €</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- DESERTI I PIĆA -->
+    <section class="menu-category">
+      <h2 style="font-family:'Pacifico',cursive; color:var(--ocean-dark); margin-bottom:24px; font-size:1.6rem;">🥤 Pića i deserti</h2>
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-img" style="font-size:3rem;">🥤</div>
+          <div class="card-body">
+            <h3 class="card-title">Limonada oceana</h3>
+            <p class="card-text">Svježe cijeđeni limun, menta, tonic voda i plavi kurasao</p>
+            <span class="card-price">3,50 €</span>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-img" style="font-size:3rem;">🍦</div>
+          <div class="card-body">
+            <h3 class="card-title">Sladoled od soli mora</h3>
+            <p class="card-text">Karamela, morska sol i čokolada. Savršen kraj obroka.</p>
+            <span class="card-price">4,00 €</span>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-img" style="font-size:3rem;">🫐</div>
+          <div class="card-body">
+            <h3 class="card-title">Tiramisu val</h3>
+            <p class="card-text">Klasični tiramisu s borovnicama i kremom od mascarpone sira</p>
+            <span class="card-price">4,50 €</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div style="text-align:center; margin-top:16px;">
+      <a href="order.html" class="btn btn-primary">Naruči odmah 🦈</a>
+    </div>
+  </main>
+
+  <footer>
+    <p><strong>Shark's Pizza</strong> – Gdje okean susreće tijesto 🌊🍕</p>
+    <p>© <span id="year"></span> | Izradio: <em>Ime Prezime</em></p>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </footer>
+
+</body>
+</html>

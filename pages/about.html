@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shark's Pizza – O nama</title>
+  <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      margin-bottom: 56px;
+    }
+    @media (max-width: 700px) { .about-grid { grid-template-columns: 1fr; } }
+    .about-text h2 {
+      font-family: 'Creepster', cursive;
+      font-size: 2.2rem;
+      color: var(--ocean-dark);
+      margin-bottom: 16px;
+    }
+    .about-text p {
+      color: var(--text-mid);
+      line-height: 1.8;
+      margin-bottom: 16px;
+      font-size: 1.02rem;
+    }
+    .about-img-box {
+      background: linear-gradient(135deg, var(--ocean-light), var(--ocean-mid));
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 8rem;
+      min-height: 260px;
+      box-shadow: var(--shadow);
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .team-card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 28px 20px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+    .team-card .avatar { font-size: 4rem; margin-bottom: 12px; }
+    .team-card h3 { font-family: 'Pacifico', cursive; color: var(--ocean-dark); margin-bottom: 6px; }
+    .team-card p { font-size: 0.9rem; color: var(--text-mid); }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img class="banner" src="../images/banner.png" alt="Shark's Pizza banner" />
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="../index.html">🏠 Početna</a></li>
+      <li><a href="menu.html">🍕 Meni</a></li>
+      <li><a href="about.html" class="active">🦈 O nama</a></li>
+      <li><a href="gallery.html">📸 Galerija</a></li>
+      <li><a href="order.html">🛒 Naruči</a></li>
+      <li><a href="contact.html">📞 Kontakt</a></li>
+      <li><a href="deals.html">🏷️ Akcije</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1 class="section-title">O <span>nama</span></h1>
+
+    <section class="about-grid">
+      <div class="about-text">
+        <h2>Naša priča 🦈</h2>
+        <p>
+          Shark's Pizza rodila se iz jedne ludačke ideje: što ako bi morski pas mogao jesti pizzu?
+          Odgovor je bio – naravno, i to SVAKI DAN.
+        </p>
+        <p>
+          Osnovana 2019. godine uz more, naša pizzeria spaja svježinu jadranske obale s
+          talijanskom tradicijom izrade tijesta. Svaki dan ujutro naši majstori miješaju tijesto
+          ručno, a umak kuhamo po receptu koji čuvamo kao tajnu mornara.
+        </p>
+        <p>
+          Danas dostavljamo u cijelom gradu i ponosimo se s više od <strong>10.000 zadovoljnih 
+          gostiju</strong> koji se uvijek vraćaju na još jedan zalogaj.
+        </p>
+      </div>
+      <div class="about-img-box" role="img" aria-label="Ilustracija morskog psa s pizzom">🦈🍕</div>
+    </section>
+
+    <!-- Vrijednosti -->
+    <section>
+      <h2 class="section-title">Naše <span>vrijednosti</span></h2>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-img">🌊</div>
+          <div class="card-body">
+            <h3 class="card-title">Svježina</h3>
+            <p class="card-text">Namirnice stižu svaki dan s lokalne tržnice i od provjerenih dobavljača.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-img">🤝</div>
+          <div class="card-body">
+            <h3 class="card-title">Zajednica</h3>
+            <p class="card-text">Surađujemo s lokalnim farmerima i svakim narudžbom podupiremo lokalnu ekonomiju.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-img">♻️</div>
+          <div class="card-body">
+            <h3 class="card-title">Okoliš</h3>
+            <p class="card-text">Koristimo ambalaažu koja se može reciklirati i smanjujemo otpad na minimum.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tim -->
+    <section style="margin-top:64px;">
+      <h2 class="section-title">Naš <span>tim</span></h2>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="avatar">👨‍🍳</div>
+          <h3>Marco</h3>
+          <p>Glavni chef & osnivač. 20 godina iskustva u Napulju.</p>
+        </div>
+        <div class="team-card">
+          <div class="avatar">👩‍🍳</div>
+          <h3>Ana</h3>
+          <p>Majstorica tijesta i tajna iza svakog savršenog ruba.</p>
+        </div>
+        <div class="team-card">
+          <div class="avatar">🧑‍💼</div>
+          <h3>Tomislav</h3>
+          <p>Voditelj dostave – brži od morskog psa u napadu!</p>
+        </div>
+        <div class="team-card">
+          <div class="avatar">👩‍💻</div>
+          <h3>Lea</h3>
+          <p>Marketing i osmijeh na šalteru. Srce Shark's Pizze.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p><strong>Shark's Pizza</strong> – Gdje okean susreće tijesto 🌊🍕</p>
+    <p>© <span id="year"></span> | Izradio: <em>Ime Prezime</em></p>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </footer>
+
+</body>
+</html>

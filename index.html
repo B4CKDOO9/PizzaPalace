@@ -1,62 +1,117 @@
 <!DOCTYPE html>
 <html lang="hr">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Pizza Palace</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" href="images/favicon-home.svg" type="image/svg+xml">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shark's Pizza – Home</title>
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
-
 <body>
-    <div class="page-grid">
-        <header class="site-header">
-            <h1>Pizza Palace</h1>
-        </header>
 
-        <nav class="site-nav" aria-label="Glavna navigacija">
-            <ul>
-                <li><a href="index.html">Početna</a></li>
-                <li><a href="menu.html">Jelovnik</a></li>
-                <li><a href="location.html">Lokacija</a></li>
-                <li><a href="hours.html">Radno vrijeme</a></li>
-                <li><a href="contact.html">Kontakt</a></li>
-            </ul>
-        </nav>
+  <!-- ZAGLAVLJE / HEADER -->
+  <header>
+    <img class="banner" src="images/banner.png" alt="Shark's Pizza – banner s morskim psem koji jede pizzu" />
+  </header>
 
-        <main class="site-main">
-            <section class="hero">
-                <div class="hero-content">
-                    <h2>Svježe. Vruće. Ukusno.</h2>
-                    <p>Brza narudžba omiljene pizze. Pogledajte naš jelovnik i informacije o lokaciji i radnom vremenu.
-                    </p>
-                    <p class="cta"><a class="order-btn" href="menu.html">Pogledaj jelovnik</a></p>
-                </div>
-                <figure class="hero-image">
-                    <img src="images/hero.svg" alt="Velika pizza na drvenoj dasci" />
-                </figure>
-            </section>
-            <section class="highlights">
-                <article>
-                    <h4>Brza dostava</h4>
-                    <p>Najbolje sastojke i brzu dostavu u vašem gradu.</p>
-                </article>
-                <article>
-                    <h4>Kalorije u jelovniku</h4>
-                    <p>Svaka pizza u jelovniku ima navedene kalorijske vrijednosti za one koji vode računa o unosu.</p>
-                </article>
-                <article>
-                    <h4>Kvaliteta</h4>
-                    <p>Sve pizze pripremamo od svježih sastojaka i domaćeg tijesta.</p>
-                </article>
-            </section>
-        </main>
+  <!-- NAVIGACIJA -->
+  <nav>
+    <ul>
+      <li><a href="index.html" class="active">🏠 Home</a></li>
+      <li><a href="pages/menu.html">🍕 Menue</a></li>
+      <li><a href="pages/about.html">🦈 About</a></li>
+      <li><a href="pages/gallery.html">📸 Gallery</a></li>
+      <li><a href="pages/order.html">🛒 Order</a></li>
+      <li><a href="pages/contact.html">📞 Contact</a></li>
+      <li><a href="pages/deals.html">🏷️ Deals</a></li>
+    </ul>
+  </nav>
 
-        <footer class="site-footer">
-            <p>Filip Smolec — 2025</p>
-        </footer>
-    </div>
+  <!-- GLAVNI SADRŽAJ -->
+  <main>
+
+    <!-- Hero uvodni blok -->
+    <section class="hero-intro">
+      <h1>Welcome to <span>Shark's Pizza</span>!</h1>
+      <p>
+        Craziest pizza in towns – fresh, crunchy and so good that white shark would eat it in seconds!
+        Order now, and dive in.
+      </p>
+      <a href="pages/order.html" class="btn btn-primary">Order now 🦈</a>
+      &nbsp;
+      <a href="pages/menu.html" class="btn btn-secondary">See menue</a>
+    </section>
+
+    <!-- Istaknute pizze -->
+    <section>
+      <h2 class="section-title">🔥 Our <span>hit</span> pizzas</h2>
+      <div class="card-grid">
+
+        <article class="card">
+          <div class="card-img" role="img" aria-label="Great White pizza">🦈🍕</div>
+          <div class="card-body">
+            <h3 class="card-title">Great White</h3>
+            <p class="card-text">Bijeli umak, mozzarella, piletina, rukola i parmezan. Klasik koji grize natrag.</p>
+            <span class="card-price">9,90 €</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img" role="img" aria-label="Deep Sea pizza">🌊🍕</div>
+          <div class="card-body">
+            <h3 class="card-title">Deep Sea</h3>
+            <p class="card-text">Plodovi mora, češnjak, maslinovo ulje, kapari i limunova korica. Okus oceana!</p>
+            <span class="card-price">11,50 €</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img" role="img" aria-label="Shark Attack pizza">🌶️🍕</div>
+          <div class="card-body">
+            <h3 class="card-title">Shark Attack</h3>
+            <p class="card-text">Ljuta salama, jalapeño, crveni luk, dimljeni sir. Nije za slabašne!</p>
+            <span class="card-price">10,50 €</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Zašto mi -->
+    <section style="margin-top: 64px;">
+      <h2 class="section-title">Zašto <span>Shark's</span>?</h2>
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:24px; text-align:center;">
+        <div style="background:white; border-radius:var(--radius); padding:32px 20px; box-shadow:var(--shadow);">
+          <div style="font-size:3rem; margin-bottom:12px;">⚡</div>
+          <h3 style="font-family:'Pacifico',cursive; color:var(--ocean-dark); margin-bottom:8px;">Brza dostava</h3>
+          <p style="color:var(--text-mid); font-size:0.93rem;">Pizza kod tebe za 30 minuta ili je gratis!</p>
+        </div>
+        <div style="background:white; border-radius:var(--radius); padding:32px 20px; box-shadow:var(--shadow);">
+          <div style="font-size:3rem; margin-bottom:12px;">🧑‍🍳</div>
+          <h3 style="font-family:'Pacifico',cursive; color:var(--ocean-dark); margin-bottom:8px;">Svježi sastojci</h3>
+          <p style="color:var(--text-mid); font-size:0.93rem;">Koristimo samo lokalne i svježe namirnice svaki dan.</p>
+        </div>
+        <div style="background:white; border-radius:var(--radius); padding:32px 20px; box-shadow:var(--shadow);">
+          <div style="font-size:3rem; margin-bottom:12px;">❤️</div>
+          <h3 style="font-family:'Pacifico',cursive; color:var(--ocean-dark); margin-bottom:8px;">Pečeno s ljubavlju</h3>
+          <p style="color:var(--text-mid); font-size:0.93rem;">Svaka pizza ručno razvučena i pečena u peći na drva.</p>
+        </div>
+        <div style="background:white; border-radius:var(--radius); padding:32px 20px; box-shadow:var(--shadow);">
+          <div style="font-size:3rem; margin-bottom:12px;">💰</div>
+          <h3 style="font-family:'Pacifico',cursive; color:var(--ocean-dark); margin-bottom:8px;">Povoljne cijene</h3>
+          <p style="color:var(--text-mid); font-size:0.93rem;">Kvaliteta bez praznog džepa. Pizza od 7,90 €!</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p><strong>Shark's Pizza</strong> – Gdje okean susreće tijesto 🌊🍕</p>
+    <p>© <span id="year"></span> | Izradio: <em>Ime Prezime</em></p>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </footer>
+
 </body>
-
 </html>
