@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="hr">
+<html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shark's Pizza – Naruči</title>
+  <title>Shark's Pizza – Order</title>
   <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
   <link rel="stylesheet" href="../css/style.css" />
   <style>
@@ -13,7 +14,12 @@
       gap: 36px;
       align-items: start;
     }
-    @media (max-width: 900px) { .order-layout { grid-template-columns: 1fr; } }
+
+    @media (max-width: 900px) {
+      .order-layout {
+        grid-template-columns: 1fr;
+      }
+    }
 
     .pizza-option {
       display: flex;
@@ -23,18 +29,47 @@
       border-radius: 14px;
       padding: 16px 20px;
       margin-bottom: 14px;
-      box-shadow: 0 2px 12px rgba(10,61,107,0.1);
+      box-shadow: 0 2px 12px rgba(10, 61, 107, 0.1);
       cursor: pointer;
       border: 2px solid transparent;
       transition: all 0.2s;
     }
-    .pizza-option:hover { border-color: var(--ocean-light); }
-    .pizza-option input[type="checkbox"] { width: 20px; height: 20px; cursor: pointer; accent-color: var(--pizza-red); }
-    .pizza-option .po-emoji { font-size: 2.5rem; }
-    .pizza-option .po-info { flex: 1; }
-    .pizza-option .po-name { font-weight: 700; color: var(--ocean-dark); font-size: 1rem; }
-    .pizza-option .po-desc { font-size: 0.85rem; color: var(--text-mid); }
-    .pizza-option .po-price { font-weight: 900; color: var(--pizza-red); font-size: 1.1rem; }
+
+    .pizza-option:hover {
+      border-color: var(--ocean-light);
+    }
+
+    .pizza-option input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      accent-color: var(--pizza-red);
+    }
+
+    .pizza-option .po-emoji {
+      font-size: 2.5rem;
+    }
+
+    .pizza-option .po-info {
+      flex: 1;
+    }
+
+    .pizza-option .po-name {
+      font-weight: 700;
+      color: var(--ocean-dark);
+      font-size: 1rem;
+    }
+
+    .pizza-option .po-desc {
+      font-size: 0.85rem;
+      color: var(--text-mid);
+    }
+
+    .pizza-option .po-price {
+      font-weight: 900;
+      color: var(--pizza-red);
+      font-size: 1.1rem;
+    }
 
     .order-summary {
       background: white;
@@ -44,24 +79,42 @@
       position: sticky;
       top: 80px;
     }
+
     .order-summary h3 {
       font-family: 'Pacifico', cursive;
       color: var(--ocean-dark);
       margin-bottom: 20px;
       font-size: 1.3rem;
     }
-    #summary-list { min-height: 60px; margin-bottom: 16px; }
+
+    #summary-list {
+      min-height: 60px;
+      margin-bottom: 16px;
+    }
+
     .summary-item {
-      display: flex; justify-content: space-between;
-      padding: 6px 0; border-bottom: 1px solid var(--ocean-foam);
+      display: flex;
+      justify-content: space-between;
+      padding: 6px 0;
+      border-bottom: 1px solid var(--ocean-foam);
       font-size: 0.9rem;
     }
+
     .total-line {
-      display: flex; justify-content: space-between;
-      font-weight: 900; font-size: 1.1rem; margin-top: 12px;
+      display: flex;
+      justify-content: space-between;
+      font-weight: 900;
+      font-size: 1.1rem;
+      margin-top: 12px;
       color: var(--ocean-dark);
     }
-    .empty-msg { color: var(--text-mid); font-size: 0.9rem; font-style: italic; }
+
+    .empty-msg {
+      color: var(--text-mid);
+      font-size: 0.9rem;
+      font-style: italic;
+    }
+
     .success-msg {
       display: none;
       background: #c6f6d5;
@@ -75,6 +128,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <header>
@@ -83,121 +137,116 @@
 
   <nav>
     <ul>
-      <li><a href="../index.html">🏠 Početna</a></li>
-      <li><a href="menu.html">🍕 Meni</a></li>
-      <li><a href="about.html">🦈 O nama</a></li>
-      <li><a href="gallery.html">📸 Galerija</a></li>
-      <li><a href="order.html" class="active">🛒 Naruči</a></li>
-      <li><a href="contact.html">📞 Kontakt</a></li>
-      <li><a href="deals.html">🏷️ Akcije</a></li>
+      <li><a href="../index.html">🏠 Home</a></li>
+      <li><a href="menu.html">🍕 Menu</a></li>
+      <li><a href="about.html">🦈 About Us</a></li>
+      <li><a href="gallery.html">📸 Gallery</a></li>
+      <li><a href="order.html" class="active">🛒 Order</a></li>
+      <li><a href="contact.html">📞 Contact</a></li>
+      <li><a href="deals.html">🏷️ Deals</a></li>
     </ul>
   </nav>
 
   <main>
-    <h1 class="section-title">🛒 <span>Naruči</span> online</h1>
+    <h1 class="section-title">🛒 <span>Order</span> online</h1>
 
     <div class="order-layout">
-      <!-- Pizza izbor -->
+      <!-- Pizza selection -->
       <section>
-        <h2 style="font-family:'Pacifico',cursive; color:var(--ocean-dark); margin-bottom:20px;">Odaberi pizze:</h2>
+        <h2 style="font-family:'Pacifico',cursive; color:var(--ocean-dark); margin-bottom:20px;">Choose your pizzas:
+        </h2>
 
         <label class="pizza-option">
           <input type="checkbox" data-name="Great White" data-price="9.90" onchange="updateSummary()" />
-          <span class="po-emoji">🦈🍕</span>
           <span class="po-info">
             <span class="po-name">Great White</span>
-            <span class="po-desc" style="display:block">Bijeli umak, piletina, rukola, parmezan</span>
+            <span class="po-desc" style="display:block">White sauce, chicken, arugula, parmesan</span>
           </span>
           <span class="po-price">9,90 €</span>
         </label>
 
         <label class="pizza-option">
           <input type="checkbox" data-name="Deep Sea" data-price="11.50" onchange="updateSummary()" />
-          <span class="po-emoji">🌊🍕</span>
           <span class="po-info">
             <span class="po-name">Deep Sea</span>
-            <span class="po-desc" style="display:block">Plodovi mora, maslinovo ulje, kapari</span>
+            <span class="po-desc" style="display:block">Seafood, olive oil, capers</span>
           </span>
           <span class="po-price">11,50 €</span>
         </label>
 
         <label class="pizza-option">
           <input type="checkbox" data-name="Shark Attack" data-price="10.50" onchange="updateSummary()" />
-          <span class="po-emoji">🌶️🍕</span>
           <span class="po-info">
             <span class="po-name">Shark Attack 🔥</span>
-            <span class="po-desc" style="display:block">Ljuta salama, jalapeño, dimljeni sir</span>
+            <span class="po-desc" style="display:block">Spicy salami, jalapeño, smoked cheese</span>
           </span>
           <span class="po-price">10,50 €</span>
         </label>
 
         <label class="pizza-option">
           <input type="checkbox" data-name="Ocean Garden" data-price="9.00" onchange="updateSummary()" />
-          <span class="po-emoji">🌿🍕</span>
           <span class="po-info">
-            <span class="po-name">Ocean Garden (veganska)</span>
-            <span class="po-desc" style="display:block">Povrće, rukola, biljni sir</span>
+            <span class="po-name">Ocean Garden (vegan)</span>
+            <span class="po-desc" style="display:block">Vegetables, arugula, plant-based cheese</span>
           </span>
           <span class="po-price">9,00 €</span>
         </label>
 
         <label class="pizza-option">
           <input type="checkbox" data-name="Hammerhead" data-price="8.90" onchange="updateSummary()" />
-          <span class="po-emoji">🥓🍕</span>
           <span class="po-info">
             <span class="po-name">Hammerhead</span>
-            <span class="po-desc" style="display:block">Šunka, slanina, kukuruz, mozzarella</span>
+            <span class="po-desc" style="display:block">Ham, bacon, corn, mozzarella</span>
           </span>
           <span class="po-price">8,90 €</span>
         </label>
 
         <label class="pizza-option">
           <input type="checkbox" data-name="Apex Predator" data-price="13.00" onchange="updateSummary()" />
-          <span class="po-emoji">👑🍕</span>
           <span class="po-info">
             <span class="po-name">Apex Predator</span>
-            <span class="po-desc" style="display:block">Sve meso – salama, šunka, slanina, chorizo</span>
+            <span class="po-desc" style="display:block">All meat — salami, ham, bacon, chorizo</span>
           </span>
           <span class="po-price">13,00 €</span>
         </label>
 
-        <!-- Dostava podaci -->
-        <h2 style="font-family:'Pacifico',cursive; color:var(--ocean-dark); margin:32px 0 20px;">Podaci za dostavu:</h2>
+        <!-- Delivery details -->
+        <h2 style="font-family:'Pacifico',cursive; color:var(--ocean-dark); margin:32px 0 20px;">Delivery details:</h2>
         <div class="contact-form" style="margin:0; padding:28px;">
           <div class="form-group">
-            <label for="ime">Ime i prezime *</label>
-            <input type="text" id="ime" placeholder="Npr. Ivan Horvat" required />
+            <label for="ime">Full name *</label>
+            <input type="text" id="ime" placeholder="e.g. Ivan Horvat" required />
           </div>
           <div class="form-group">
-            <label for="adresa">Adresa dostave *</label>
-            <input type="text" id="adresa" placeholder="Ulica i broj" required />
+            <label for="adresa">Delivery address *</label>
+            <input type="text" id="adresa" placeholder="Street and number" required />
           </div>
           <div class="form-group">
-            <label for="telefon">Broj telefona *</label>
+            <label for="telefon">Phone number *</label>
             <input type="tel" id="telefon" placeholder="+385 9X XXX XXXX" required />
           </div>
           <div class="form-group">
-            <label for="napomena">Napomena</label>
-            <textarea id="napomena" placeholder="Alergije, posebni zahtjevi..."></textarea>
+            <label for="napomena">Note</label>
+            <textarea id="napomena" placeholder="Allergies, special requests..."></textarea>
           </div>
         </div>
       </section>
 
       <!-- Summary -->
       <aside class="order-summary">
-        <h3>🛒 Tvoja narudžba</h3>
+        <h3>🛒 Your order</h3>
         <div id="summary-list">
-          <p class="empty-msg">Još nisi odabrao/la pizzu.</p>
+          <p class="empty-msg">You haven't selected a pizza yet.</p>
         </div>
         <div class="total-line">
-          <span>Ukupno:</span>
+          <span>Total:</span>
           <span id="total">0,00 €</span>
         </div>
         <button class="btn btn-primary" style="width:100%; margin-top:20px;" onclick="placeOrder()">
-          Naruči 🦈
+          Place order 🦈
         </button>
         <div class="success-msg" id="success-msg">
-          🦈 Narudžba primljena! Pizza je na putu. Hvala!
+          🦈 Order received! Your pizza is on the way. Thank you!
         </div>
       </aside>
     </div>
@@ -205,8 +254,8 @@
   </main>
 
   <footer>
-    <p><strong>Shark's Pizza</strong> – Gdje okean susreće tijesto 🌊🍕</p>
-    <p>© <span id="year"></span> | Izradio: <em>Ime Prezime</em></p>
+    <p><strong>Shark's Pizza</strong> – Where the ocean meets dough 🌊🍕</p>
+    <p>© <span id="year"></span> | Copyright: <em>Fiip Smolec</em></p>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   </footer>
 
@@ -217,7 +266,7 @@
       const totalEl = document.getElementById('total');
 
       if (checked.length === 0) {
-        list.innerHTML = '<p class="empty-msg">Još nisi odabrao/la pizzu.</p>';
+        list.innerHTML = '<p class="empty-msg">You haven\'t selected a pizza yet.</p>';
         totalEl.textContent = '0,00 €';
         return;
       }
@@ -227,21 +276,22 @@
       checked.forEach(cb => {
         const price = parseFloat(cb.dataset.price);
         total += price;
-        html += `<div class="summary-item"><span>${cb.dataset.name}</span><span>${price.toFixed(2).replace('.',',')} €</span></div>`;
+        html += `<div class="summary-item"><span>${cb.dataset.name}</span><span>${price.toFixed(2).replace('.', ',')} €</span></div>`;
       });
       list.innerHTML = html;
-      totalEl.textContent = total.toFixed(2).replace('.',',') + ' €';
+      totalEl.textContent = total.toFixed(2).replace('.', ',') + ' €';
     }
 
     function placeOrder() {
       const checked = document.querySelectorAll('input[type="checkbox"]:checked');
-      if (checked.length === 0) { alert('Odaberi barem jednu pizzu!'); return; }
+      if (checked.length === 0) { alert('Choose at least one pizza!'); return; }
       const ime = document.getElementById('ime').value.trim();
       const adresa = document.getElementById('adresa').value.trim();
-      if (!ime || !adresa) { alert('Molimo unesi ime i adresu dostave.'); return; }
+      if (!ime || !adresa) { alert('Please enter your name and delivery address.'); return; }
       document.getElementById('success-msg').style.display = 'block';
     }
   </script>
 
 </body>
+
 </html>

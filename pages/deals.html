@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="hr">
+<html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shark's Pizza – Akcije</title>
+  <title>Shark's Pizza – Deals</title>
   <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
   <link rel="stylesheet" href="../css/style.css" />
   <style>
@@ -16,14 +17,17 @@
       position: relative;
       transition: transform 0.25s, box-shadow 0.25s;
     }
+
     .deal-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 20px 48px rgba(10,61,107,0.22);
+      box-shadow: 0 20px 48px rgba(10, 61, 107, 0.22);
       border-color: var(--pizza-gold);
     }
+
     .deal-ribbon {
       position: absolute;
-      top: 16px; right: -8px;
+      top: 16px;
+      right: -8px;
       background: var(--pizza-red);
       color: white;
       font-weight: 900;
@@ -32,13 +36,23 @@
       clip-path: polygon(0 0, 100% 0, 100% 100%, 8px 100%);
       letter-spacing: 0.05em;
     }
+
     .deal-emoji {
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 5rem;
       background: linear-gradient(135deg, var(--ocean-foam), var(--ocean-light));
       height: 170px;
+      position: relative;
     }
-    .deal-body { padding: 22px; }
+
+    /* emoji-overlay removed: using emoji inline inside .deal-emoji */
+
+    .deal-body {
+      padding: 22px;
+    }
+
     .deal-title {
       font-family: 'Creepster', cursive;
       font-size: 1.6rem;
@@ -46,10 +60,32 @@
       margin-bottom: 8px;
       letter-spacing: 0.04em;
     }
-    .deal-desc { color: var(--text-mid); font-size: 0.93rem; line-height: 1.6; margin-bottom: 14px; }
-    .deal-price-row { display: flex; align-items: center; gap: 12px; }
-    .old-price { text-decoration: line-through; color: #a0aec0; font-size: 1rem; }
-    .new-price { color: var(--pizza-red); font-weight: 900; font-size: 1.4rem; }
+
+    .deal-desc {
+      color: var(--text-mid);
+      font-size: 0.93rem;
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+
+    .deal-price-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .old-price {
+      text-decoration: line-through;
+      color: #a0aec0;
+      font-size: 1rem;
+    }
+
+    .new-price {
+      color: var(--pizza-red);
+      font-weight: 900;
+      font-size: 1.4rem;
+    }
+
     .countdown {
       background: var(--ocean-dark);
       color: var(--ocean-light);
@@ -58,10 +94,22 @@
       text-align: center;
       margin-bottom: 40px;
     }
-    .countdown h3 { font-family: 'Pacifico', cursive; margin-bottom: 10px; font-size: 1.2rem; }
-    .countdown-timer { font-family: 'Creepster', cursive; font-size: 2.8rem; color: var(--pizza-gold); letter-spacing: 0.08em; }
+
+    .countdown h3 {
+      font-family: 'Pacifico', cursive;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+
+    .countdown-timer {
+      font-family: 'Creepster', cursive;
+      font-size: 2.8rem;
+      color: var(--pizza-gold);
+      letter-spacing: 0.08em;
+    }
   </style>
 </head>
+
 <body>
 
   <header>
@@ -70,24 +118,24 @@
 
   <nav>
     <ul>
-      <li><a href="../index.html">🏠 Početna</a></li>
-      <li><a href="menu.html">🍕 Meni</a></li>
-      <li><a href="about.html">🦈 O nama</a></li>
-      <li><a href="gallery.html">📸 Galerija</a></li>
-      <li><a href="order.html">🛒 Naruči</a></li>
-      <li><a href="contact.html">📞 Kontakt</a></li>
-      <li><a href="deals.html" class="active">🏷️ Akcije</a></li>
+      <li><a href="../index.html">🏠 Home</a></li>
+      <li><a href="menu.html">🍕 Menu</a></li>
+      <li><a href="about.html">🦈 About Us</a></li>
+      <li><a href="gallery.html">📸 Gallery</a></li>
+      <li><a href="order.html">🛒 Order</a></li>
+      <li><a href="contact.html">📞 Contact</a></li>
+      <li><a href="deals.html" class="active">🏷️ Deals</a></li>
     </ul>
   </nav>
 
   <main>
-    <h1 class="section-title">🏷️ <span>Akcije</span> & Ponude</h1>
+    <h1 class="section-title">🏷️ <span>Deals</span> & Offers</h1>
 
     <!-- Countdown -->
     <div class="countdown">
-      <h3>⏳ Današnja flash akcija istječe za:</h3>
+      <h3>⏳ Today's flash deal ends in:</h3>
       <div class="countdown-timer" id="timer">--:--:--</div>
-      <p style="margin-top:8px; font-size:0.9rem; opacity:0.8;">Požuri – zalihe su ograničene!</p>
+      <p style="margin-top:8px; font-size:0.9rem; opacity:0.8;">Hurry — supplies are limited!</p>
     </div>
 
     <!-- Deals grid -->
@@ -97,8 +145,8 @@
         <div class="deal-ribbon">-20%</div>
         <div class="deal-emoji">2️⃣🍕</div>
         <div class="deal-body">
-          <h3 class="deal-title">2 za 1!</h3>
-          <p class="deal-desc">Svaki četvrtak – kupi jednu pizzu i drugu dobivaš gratis! Vrijedi za sve pizze.</p>
+          <h3 class="deal-title">2 for 1!</h3>
+          <p class="deal-desc">Every Thursday — buy one pizza and get the second one free! Valid on all pizzas.</p>
           <div class="deal-price-row">
             <span class="old-price">19,80 €</span>
             <span class="new-price">od 8,90 €</span>
@@ -110,8 +158,8 @@
         <div class="deal-ribbon">NOVO</div>
         <div class="deal-emoji">👨‍👩‍👦🍕</div>
         <div class="deal-body">
-          <h3 class="deal-title">Obiteljski paket</h3>
-          <p class="deal-desc">3 pizze + 1,5L pića + 2 deserta. Savršeno za obite ljski obrok vikendima!</p>
+          <h3 class="deal-title">Family bundle</h3>
+          <p class="deal-desc">3 pizzas + 1.5L drinks + 2 desserts. Perfect for a family meal on the weekend!</p>
           <div class="deal-price-row">
             <span class="old-price">42,00 €</span>
             <span class="new-price">32,90 €</span>
@@ -124,9 +172,9 @@
         <div class="deal-emoji">🎓🍕</div>
         <div class="deal-body">
           <h3 class="deal-title">Student deal</h3>
-          <p class="deal-desc">Uz prikaz studentske iskaznice: 15% popusta na svaku narudžbu svaki dan!</p>
+          <p class="deal-desc">Show your student ID: 15% off every order, every day!</p>
           <div class="deal-price-row">
-            <span class="new-price">-15% uvijek</span>
+            <span class="new-price">-15% always</span>
           </div>
         </div>
       </div>
@@ -135,10 +183,10 @@
         <div class="deal-ribbon">VIKEND</div>
         <div class="deal-emoji">🌙🍕</div>
         <div class="deal-body">
-          <h3 class="deal-title">Noćna dostava</h3>
-          <p class="deal-desc">Pet–Sub od 22h do 02h: besplatna dostava bez minimuma narudžbe!</p>
+          <h3 class="deal-title">Night delivery</h3>
+          <p class="deal-desc">Fri–Sat from 10 PM to 2 AM: free delivery with no minimum order!</p>
           <div class="deal-price-row">
-            <span class="new-price">Dostava GRATIS</span>
+            <span class="new-price">FREE delivery</span>
           </div>
         </div>
       </div>
@@ -147,10 +195,10 @@
         <div class="deal-ribbon">-30%</div>
         <div class="deal-emoji">🎂🍕</div>
         <div class="deal-body">
-          <h3 class="deal-title">Rođendanski popust</h3>
-          <p class="deal-desc">Slavi rođendan? Donesi tortu, mi dajemo 30% popusta na cijelu narudžbu!</p>
+          <h3 class="deal-title">Birthday discount</h3>
+          <p class="deal-desc">Celebrating a birthday? Bring a cake and we’ll give you 30% off your entire order!</p>
           <div class="deal-price-row">
-            <span class="new-price">-30% na sve</span>
+            <span class="new-price">-30% on everything</span>
           </div>
         </div>
       </div>
@@ -159,10 +207,10 @@
         <div class="deal-ribbon">LOJALNOST</div>
         <div class="deal-emoji">⭐🍕</div>
         <div class="deal-body">
-          <h3 class="deal-title">Loyalty kartica</h3>
-          <p class="deal-desc">Svaka 10. pizza je besplatna! Pitaj nas za besplatnu loyalty karticu.</p>
+          <h3 class="deal-title">Loyalty card</h3>
+          <p class="deal-desc">Every 10th pizza is free! Ask us for a free loyalty card.</p>
           <div class="deal-price-row">
-            <span class="new-price">10. pizza = FREE</span>
+            <span class="new-price">10th pizza = FREE</span>
           </div>
         </div>
       </div>
@@ -170,26 +218,26 @@
     </div>
 
     <div style="text-align:center; margin-top:48px;">
-      <a href="order.html" class="btn btn-primary">Iskoristi akciju sada 🦈</a>
+      <a href="order.html" class="btn btn-primary">Claim the deal now 🦈</a>
     </div>
   </main>
 
   <footer>
-    <p><strong>Shark's Pizza</strong> – Gdje okean susreće tijesto 🌊🍕</p>
-    <p>© <span id="year"></span> | Izradio: <em>Ime Prezime</em></p>
+    <p><strong>Shark's Pizza</strong> – Where the ocean meets dough 🌊🍕</p>
+    <p>© <span id="year"></span> | Copyright: <em>Fiip Smolec</em></p>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   </footer>
 
   <script>
-    // Countdown do ponoći
+    // Countdown until midnight
     function updateTimer() {
       const now = new Date();
       const midnight = new Date();
       midnight.setHours(23, 59, 59, 999);
       const diff = midnight - now;
-      const h = String(Math.floor(diff / 3600000)).padStart(2,'0');
-      const m = String(Math.floor((diff % 3600000) / 60000)).padStart(2,'0');
-      const s = String(Math.floor((diff % 60000) / 1000)).padStart(2,'0');
+      const h = String(Math.floor(diff / 3600000)).padStart(2, '0');
+      const m = String(Math.floor((diff % 3600000) / 60000)).padStart(2, '0');
+      const s = String(Math.floor((diff % 60000) / 1000)).padStart(2, '0');
       document.getElementById('timer').textContent = `${h}:${m}:${s}`;
     }
     updateTimer();
@@ -197,4 +245,5 @@
   </script>
 
 </body>
+
 </html>

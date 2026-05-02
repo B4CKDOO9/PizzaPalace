@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="hr">
+<html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shark's Pizza – Meni</title>
+  <title>Shark's Pizza – Menu</title>
   <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
   <link rel="stylesheet" href="../css/style.css" />
   <style>
     .menu-category {
       margin-bottom: 56px;
     }
+
     .badge {
       display: inline-block;
       background: var(--pizza-red);
@@ -21,11 +23,22 @@
       margin-left: 8px;
       vertical-align: middle;
     }
-    .badge.veg { background: #38a169; }
-    .badge.hot { background: #e53e3e; }
-    .badge.new { background: var(--pizza-gold); color: var(--drip-black); }
+
+    .badge.veg {
+      background: #38a169;
+    }
+
+    .badge.hot {
+      background: #e53e3e;
+    }
+
+    .badge.new {
+      background: var(--pizza-gold);
+      color: var(--drip-black);
+    }
   </style>
 </head>
+
 <body>
 
   <header>
@@ -34,74 +47,97 @@
 
   <nav>
     <ul>
-      <li><a href="../index.html">🏠 Početna</a></li>
-      <li><a href="menu.html" class="active">🍕 Meni</a></li>
-      <li><a href="about.html">🦈 O nama</a></li>
-      <li><a href="gallery.html">📸 Galerija</a></li>
-      <li><a href="order.html">🛒 Naruči</a></li>
-      <li><a href="contact.html">📞 Kontakt</a></li>
-      <li><a href="deals.html">🏷️ Akcije</a></li>
+      <li><a href="../index.html">🏠 Home</a></li>
+      <li><a href="menu.html" class="active">🍕 Menu</a></li>
+      <li><a href="about.html">🦈 About Us</a></li>
+      <li><a href="gallery.html">📸 Gallery</a></li>
+      <li><a href="order.html">🛒 Order</a></li>
+      <li><a href="contact.html">📞 Contact</a></li>
+      <li><a href="deals.html">🏷️ Deals</a></li>
     </ul>
   </nav>
 
   <main>
-    <h1 class="section-title">Naš <span>Meni</span></h1>
+    <h1 class="section-title">Our <span>Menu</span></h1>
 
-    <!-- PIZZE -->
+    <!-- Pizzas -->
     <section class="menu-category">
-      <h2 style="font-family:'Pacifico',cursive; color:var(--ocean-dark); margin-bottom:24px; font-size:1.6rem;">🍕 Pizze</h2>
+      <h2 style="font-family:'Pacifico',cursive; color:var(--ocean-dark); margin-bottom:24px; font-size:1.6rem;">🍕
+        Pizzas</h2>
       <div class="card-grid">
 
         <article class="card">
-          <div class="card-img">🦈🍕</div>
+          <div class="card-img" style="overflow:hidden;">
+            <img src="https://livelytable.com/wp-content/uploads/2017/10/garlic-white-chicken-pizza-4-700x700.jpg"
+              alt="Great White pizza" style="width:100%; height:100%; object-fit:cover;" />
+          </div>
           <div class="card-body">
-            <h3 class="card-title">Great White <span class="badge new">NOVO</span></h3>
-            <p class="card-text">Bijeli umak, mozzarella, piletina, rukola, parmezan, češnjak</p>
+            <h3 class="card-title">Great White <span class="badge new">NEW</span></h3>
+            <p class="card-text">White sauce, mozzarella, chicken, arugula, parmesan, garlic</p>
             <span class="card-price">9,90 €</span>
           </div>
         </article>
 
         <article class="card">
-          <div class="card-img">🌊🍕</div>
+          <div class="card-img" style="overflow:hidden;">
+            <img src="https://foodess.com/wp-content/uploads/2023/02/seafood-pizza.jpg" alt="Deep Sea pizza"
+              style="width:100%; height:100%; object-fit:cover;" />
+          </div>
           <div class="card-body">
             <h3 class="card-title">Deep Sea</h3>
-            <p class="card-text">Plodovi mora, maslinovo ulje, kapari, limun, peršin</p>
+            <p class="card-text">Seafood, olive oil, capers, lemon, parsley</p>
             <span class="card-price">11,50 €</span>
           </div>
         </article>
 
         <article class="card">
-          <div class="card-img">🌶️🍕</div>
+          <div class="card-img" style="overflow:hidden;">
+            <img
+              src="https://www.seriouseats.com/thmb/pqUs7_ud1OhD9f-R8ziKwVEbT_8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__recipes__images__2015__07__20150702-spicy-salami-chile-honey-pizza-1-812973ac46314c948a39afaf5536c65d.jpg"
+              alt="Shark Attack pizza" style="width:100%; height:100%; object-fit:cover;" />
+          </div>
           <div class="card-body">
-            <h3 class="card-title">Shark Attack <span class="badge hot">🔥 LJUTO</span></h3>
-            <p class="card-text">Ljuta salama, jalapeño, dimljeni sir, crveni luk, cherry rajčice</p>
+            <h3 class="card-title">Shark Attack <span class="badge hot">🔥 HOT</span></h3>
+            <p class="card-text">Spicy salami, jalapeño, smoked cheese, red onion, cherry tomatoes</p>
             <span class="card-price">10,50 €</span>
           </div>
         </article>
 
         <article class="card">
-          <div class="card-img">🌿🍕</div>
+          <div class="card-img" style="overflow:hidden;">
+            <img
+              src="https://www.seriouseats.com/thmb/fyeI1xQ3mlnnNssaga8KWBvimts=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__images__2015__07__20150702-zucchini-pizza-worth-eating-10-cd9d5617d1064c1f85e198d2e2995bd1.jpg"
+              alt="Ocean Garden vegan pizza" style="width:100%; height:100%; object-fit:cover;" />
+          </div>
           <div class="card-body">
-            <h3 class="card-title">Ocean Garden <span class="badge veg">VEGANSKA</span></h3>
-            <p class="card-text">Tikvice, paprika, šampinjoni, masline, rukola, biljni sir</p>
+            <h3 class="card-title">Ocean Garden <span class="badge veg">VEGAN</span></h3>
+            <p class="card-text">Zucchini, peppers, mushrooms, olives, arugula, plant-based cheese</p>
             <span class="card-price">9,00 €</span>
           </div>
         </article>
 
         <article class="card">
-          <div class="card-img">🥓🍕</div>
+          <div class="card-img" style="overflow:hidden;">
+            <img
+              src="https://amrestcdn.azureedge.net/ph-web-ordering/Pizza_Hut_HU/2026/refresh2/v3/2026_02_PH_webes_termékképek_ham_corn_pizza_1000x1000.jpg"
+              alt="Hammerhead pizza" style="width:100%; height:100%; object-fit:cover;" />
+          </div>
           <div class="card-body">
             <h3 class="card-title">Hammerhead</h3>
-            <p class="card-text">Šunka, slanina, kukuruz, mozzarella, domaći rajčičin umak</p>
+            <p class="card-text">Ham, bacon, corn, mozzarella, homemade tomato sauce</p>
             <span class="card-price">8,90 €</span>
           </div>
         </article>
 
         <article class="card">
-          <div class="card-img">👑🍕</div>
+          <div class="card-img" style="overflow:hidden;">
+            <img
+              src="https://www.thespruceeats.com/thmb/xuxwh4RIGcZMgaJE8u3SueM0SoA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/aqIMG_4568fhor-0b89dc5c8c494ee9828ed29805791c5a.jpg"
+              alt="Apex Predator pizza" style="width:100%; height:100%; object-fit:cover;" />
+          </div>
           <div class="card-body">
             <h3 class="card-title">Apex Predator</h3>
-            <p class="card-text">Sve meso! Salama, šunka, slanina, mljeveno meso, chorizo</p>
+            <p class="card-text">All meat! Salami, ham, bacon, ground beef, chorizo</p>
             <span class="card-price">13,00 €</span>
           </div>
         </article>
@@ -109,31 +145,42 @@
       </div>
     </section>
 
-    <!-- DESERTI I PIĆA -->
+    <!-- Drinks and desserts -->
     <section class="menu-category">
-      <h2 style="font-family:'Pacifico',cursive; color:var(--ocean-dark); margin-bottom:24px; font-size:1.6rem;">🥤 Pića i deserti</h2>
+      <h2 style="font-family:'Pacifico',cursive; color:var(--ocean-dark); margin-bottom:24px; font-size:1.6rem;">🥤
+        Drinks & Desserts</h2>
       <div class="card-grid">
         <article class="card">
-          <div class="card-img" style="font-size:3rem;">🥤</div>
+          <div class="card-img" style="font-size:3rem; overflow:hidden;">
+            <img src="https://saltandbaker.com/wp-content/uploads/2021/06/blue-raspberry-lemonade-featured.jpg"
+              alt="Ocean Lemonade drink" style="width:100%; height:100%; object-fit:cover;" />
+          </div>
           <div class="card-body">
-            <h3 class="card-title">Limonada oceana</h3>
-            <p class="card-text">Svježe cijeđeni limun, menta, tonic voda i plavi kurasao</p>
+            <h3 class="card-title">Ocean Lemonade</h3>
+            <p class="card-text">Fresh lemon, mint, tonic water, and blue curaçao</p>
             <span class="card-price">3,50 €</span>
           </div>
         </article>
         <article class="card">
-          <div class="card-img" style="font-size:3rem;">🍦</div>
+          <div class="card-img" style="font-size:3rem; overflow:hidden;">
+            <img src="https://heathershomebakery.com/wp-content/uploads/2021/01/IMG_0634.jpg" alt="Sea Salt Ice Cream"
+              style="width:100%; height:100%; object-fit:cover;" />
+          </div>
           <div class="card-body">
-            <h3 class="card-title">Sladoled od soli mora</h3>
-            <p class="card-text">Karamela, morska sol i čokolada. Savršen kraj obroka.</p>
+            <h3 class="card-title">Sea Salt Ice Cream</h3>
+            <p class="card-text">Caramel, sea salt, and chocolate. The perfect ending to a meal.</p>
             <span class="card-price">4,00 €</span>
           </div>
         </article>
         <article class="card">
-          <div class="card-img" style="font-size:3rem;">🫐</div>
+          <div class="card-img" style="font-size:3rem; overflow:hidden;">
+            <img
+              src="https://cdn.vilgain.com/image/recipe-cover/cover-desktop/38d1d684-28af-432c-a9ad-c8661720afbc?v=1720863010"
+              alt="Tiramisu Wave dessert" style="width:100%; height:100%; object-fit:cover;" />
+          </div>
           <div class="card-body">
-            <h3 class="card-title">Tiramisu val</h3>
-            <p class="card-text">Klasični tiramisu s borovnicama i kremom od mascarpone sira</p>
+            <h3 class="card-title">Tiramisu Wave</h3>
+            <p class="card-text">Classic tiramisu with blueberries and mascarpone cream</p>
             <span class="card-price">4,50 €</span>
           </div>
         </article>
@@ -141,15 +188,16 @@
     </section>
 
     <div style="text-align:center; margin-top:16px;">
-      <a href="order.html" class="btn btn-primary">Naruči odmah 🦈</a>
+      <a href="order.html" class="btn btn-primary">Order now 🦈</a>
     </div>
   </main>
 
   <footer>
-    <p><strong>Shark's Pizza</strong> – Gdje okean susreće tijesto 🌊🍕</p>
-    <p>© <span id="year"></span> | Izradio: <em>Ime Prezime</em></p>
+    <p><strong>Shark's Pizza</strong> – Where the ocean meets dough 🌊🍕</p>
+    <p>© <span id="year"></span> | Copyright: <em>Fiip Smolec</em></p>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   </footer>
 
 </body>
+
 </html>

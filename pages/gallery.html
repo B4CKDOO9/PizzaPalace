@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="hr">
+<html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shark's Pizza – Galerija</title>
+  <title>Shark's Pizza – Gallery</title>
   <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
   <link rel="stylesheet" href="../css/style.css" />
   <style>
@@ -12,6 +13,7 @@
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 20px;
     }
+
     .gallery-item {
       background: white;
       border-radius: var(--radius);
@@ -21,14 +23,17 @@
       transition: transform 0.25s, box-shadow 0.25s;
       position: relative;
     }
+
     .gallery-item:hover {
       transform: scale(1.04);
       box-shadow: 0 16px 40px rgba(10, 61, 107, 0.25);
     }
+
     .gallery-item:hover .gallery-caption {
       opacity: 1;
       transform: translateY(0);
     }
+
     .gallery-emoji {
       display: flex;
       align-items: center;
@@ -37,10 +42,12 @@
       height: 200px;
       background: linear-gradient(135deg, var(--ocean-foam), var(--ocean-light));
     }
+
     .gallery-caption {
       position: absolute;
       bottom: 0;
-      left: 0; right: 0;
+      left: 0;
+      right: 0;
       background: rgba(10, 61, 107, 0.85);
       color: white;
       padding: 12px 16px;
@@ -51,14 +58,24 @@
       transition: all 0.3s;
       border-radius: 0 0 var(--radius) var(--radius);
     }
+
     /* Span wide / tall items */
-    .gallery-item.wide { grid-column: span 2; }
-    .gallery-item.tall .gallery-emoji { height: 340px; }
+    .gallery-item.wide {
+      grid-column: span 2;
+    }
+
+    .gallery-item.tall .gallery-emoji {
+      height: 340px;
+    }
+
     @media (max-width: 600px) {
-      .gallery-item.wide { grid-column: span 1; }
+      .gallery-item.wide {
+        grid-column: span 1;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <header>
@@ -67,79 +84,110 @@
 
   <nav>
     <ul>
-      <li><a href="../index.html">🏠 Početna</a></li>
-      <li><a href="menu.html">🍕 Meni</a></li>
-      <li><a href="about.html">🦈 O nama</a></li>
-      <li><a href="gallery.html" class="active">📸 Galerija</a></li>
-      <li><a href="order.html">🛒 Naruči</a></li>
-      <li><a href="contact.html">📞 Kontakt</a></li>
-      <li><a href="deals.html">🏷️ Akcije</a></li>
+      <li><a href="../index.html">🏠 Home</a></li>
+      <li><a href="menu.html">🍕 Menu</a></li>
+      <li><a href="about.html">🦈 About Us</a></li>
+      <li><a href="gallery.html" class="active">📸 Gallery</a></li>
+      <li><a href="order.html">🛒 Order</a></li>
+      <li><a href="contact.html">📞 Contact</a></li>
+      <li><a href="deals.html">🏷️ Deals</a></li>
     </ul>
   </nav>
 
   <main>
-    <h1 class="section-title">📸 <span>Galerija</span></h1>
+    <h1 class="section-title">📸 <span>Gallery</span></h1>
     <p style="text-align:center; color:var(--text-mid); margin-bottom:40px; font-size:1.05rem;">
-      Pogledaj naše pizze, restoran i tim – svježe iz naše kuhinje!
+      Take a look at our pizzas, restaurant, and team — fresh from our kitchen!
     </p>
 
     <div class="gallery-grid">
 
       <div class="gallery-item wide">
-        <div class="gallery-emoji" style="font-size:4rem; background: linear-gradient(135deg,#1a6fa8,#5bc8f5);">
-          🦈&nbsp;&nbsp;🍕
+        <div class="gallery-emoji"
+          style="font-size:4rem; background: linear-gradient(135deg,#1a6fa8,#5bc8f5); overflow:hidden;">
+          <img src="../images/banner.png" style="width:100%; height:100%; object-fit:cover;" />
         </div>
-        <div class="gallery-caption">Naše najdraže duo – morski pas i pizza!</div>
+        <div class="gallery-caption">Our favorite duo — shark and pizza!</div>
       </div>
 
       <div class="gallery-item tall">
-        <div class="gallery-emoji">🍕</div>
-        <div class="gallery-caption">Great White pizza iz pećnice</div>
+        <div class="gallery-emoji" style="overflow:hidden;">
+          <img
+            src="https://livelytable.com/wp-content/uploads/2017/10/garlic-white-chicken-pizza-4-700x700.jpg?w=300&h=400&fit=crop"
+            alt="Great White pizza" style="width:100%; height:100%; object-fit:cover;" />
+        </div>
+        <div class="gallery-caption">Great White pizza fresh from the oven</div>
       </div>
 
       <div class="gallery-item tall">
-        <div class="gallery-emoji">🌊</div>
-        <div class="gallery-caption">Inspiracija – jadranska obala</div>
+        <div class="gallery-emoji" style="overflow:hidden;">
+          <img src="https://oceanexplorer.noaa.gov/wp-content/uploads/2013/10/explored-hires-scaled.jpg"
+            alt="Adriatic coast" style="width:100%; height:100%; object-fit:cover;" />
+        </div>
+        <div class="gallery-caption">Inspiration — the Adriatic coast</div>
       </div>
 
       <div class="gallery-item">
-        <div class="gallery-emoji">👨‍🍳</div>
-        <div class="gallery-caption">Chef Marco u akciji</div>
+        <div class="gallery-emoji" style="overflow:hidden;">
+          <img
+            src="https://cdn.arlapro.com/remote/cdb.arla.com/api/assets/arla-pro-asia/7866c640-b380-4c91-befe-e819841bd36b/header-3.png?width=1200&height=1200&format=webp&rmode=crop"
+            alt="Chef Marco" style="width:100%; height:100%; object-fit:cover;" />
+        </div>
+        <div class="gallery-caption">Chef Marco in action</div>
       </div>
 
       <div class="gallery-item">
-        <div class="gallery-emoji">🔥</div>
-        <div class="gallery-caption">Peć na drva – srce pizzerije</div>
+        <div class="gallery-emoji" style="overflow:hidden;">
+          <img src="https://cpimg.tistatic.com/10668474/b/4/Wood-Fired-Oven..jpg" alt="Wood-fired oven"
+            style="width:100%; height:100%; object-fit:cover;" />
+        </div>
+        <div class="gallery-caption">Wood-fired oven — the heart of the pizzeria</div>
       </div>
 
       <div class="gallery-item">
-        <div class="gallery-emoji">🥗</div>
-        <div class="gallery-caption">Svježi sastojci svaki dan</div>
+        <div class="gallery-emoji" style="overflow:hidden;">
+          <img
+            src="https://fitmealsprep.com/wp-content/uploads/2023/08/Fit-Meals-Prep_Top-Reasons-Why-Using-Fresh-Ingredients-Really-Matters.jpg"
+            alt="Fresh vegetables" style="width:100%; height:100%; object-fit:cover;" />
+        </div>
+        <div class="gallery-caption">Fresh ingredients every day</div>
       </div>
 
       <div class="gallery-item">
-        <div class="gallery-emoji">🫙</div>
-        <div class="gallery-caption">Domaći rajčičin umak</div>
+        <div class="gallery-emoji" style="overflow:hidden;">
+          <img
+            src="https://www.slenderkitchen.com/sites/default/files/styles/gsd-4x3/public/recipe_images/homemade-marinara-sauce.jpg"
+            alt="Tomato sauce" style="width:100%; height:100%; object-fit:cover;" />
+        </div>
+        <div class="gallery-caption">Homemade tomato sauce</div>
       </div>
 
       <div class="gallery-item">
-        <div class="gallery-emoji">🍷</div>
-        <div class="gallery-caption">Selekcija lokalnih vina</div>
+        <div class="gallery-emoji" style="overflow:hidden;">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOT90s_KHCNpp1alJqL1MLqjWrhguzPk_YDw&s"
+            alt="Local wines" style="width:100%; height:100%; object-fit:cover;" />
+        </div>
+        <div class="gallery-caption">Selection of local wines</div>
       </div>
 
       <div class="gallery-item">
-        <div class="gallery-emoji">🎉</div>
-        <div class="gallery-caption">Naša pizzeria – savršeno mjesto za proslave</div>
+        <div class="gallery-emoji" style="overflow:hidden;">
+          <img
+            src="https://cdn.prod.website-files.com/63f501f2fcfc599ea419f99b/675c0d70ccc4862d34ef6bfe_66e007dea75663f0d5493477_63f501f3fcfc59b3ea1a01f7_iStock-876550728.jpeg"
+            alt="Restaurant celebration" style="width:100%; height:100%; object-fit:cover;" />
+        </div>
+        <div class="gallery-caption">Our pizzeria — the perfect place for celebrations</div>
       </div>
 
     </div>
   </main>
 
   <footer>
-    <p><strong>Shark's Pizza</strong> – Gdje okean susreće tijesto 🌊🍕</p>
-    <p>© <span id="year"></span> | Izradio: <em>Ime Prezime</em></p>
+    <p><strong>Shark's Pizza</strong> – Where the ocean meets dough 🌊🍕</p>
+    <p>© <span id="year"></span> | Copyright: <em>Fiip Smolec</em></p>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   </footer>
 
 </body>
+
 </html>
