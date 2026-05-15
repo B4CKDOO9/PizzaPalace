@@ -75,6 +75,63 @@
       font-weight: 700;
       margin-top: 16px;
     }
+
+    .pizza-lab {
+      margin-bottom: 24px;
+      background: var(--ocean-foam);
+      border: 2px solid var(--ocean-light);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+
+    .pizza-lab h3 {
+      color: var(--ocean-dark);
+      margin-bottom: 8px;
+      font-family: 'Pacifico', cursive;
+      font-size: 1.3rem;
+    }
+
+    .pizza-lab p {
+      margin-bottom: 12px;
+      color: var(--text-mid);
+      line-height: 1.5;
+    }
+
+    .lab-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+
+    .lab-actions .btn {
+      padding: 9px 16px;
+      font-size: 0.9rem;
+    }
+
+    .lab-result {
+      font-size: 0.95rem;
+      color: var(--ocean-dark);
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+
+    .message-stats {
+      margin-top: 10px;
+      background: var(--off-white);
+      border: 2px dashed var(--ocean-light);
+      border-radius: 10px;
+      padding: 12px;
+      display: grid;
+      gap: 6px;
+      font-size: 0.92rem;
+      color: var(--shark-dark);
+    }
+
+    .message-stats span {
+      font-weight: 700;
+      color: var(--ocean-dark);
+    }
   </style>
 </head>
 
@@ -154,6 +211,25 @@
           <h2 style="font-family:'Pacifico',cursive; color:var(--ocean-dark); margin-bottom:24px; font-size:1.4rem;">
             Send a message</h2>
 
+          <section class="pizza-lab">
+            <h3>🍕 PizzaLab – Isprobaj funkcionalnosti</h3>
+            <p>Upiši podatke kao gost pizzerije i testiraj unos imena, broj stola i obradu poruke prije slanja.</p>
+
+            <div class="form-group" style="margin-bottom:12px;">
+              <label for="promo-broj">Broj stola / kupona</label>
+              <input type="number" id="promo-broj" placeholder="npr. 12" />
+            </div>
+
+            <div class="lab-actions">
+              <button type="button" class="btn btn-secondary" onclick="showEnteredNumber()">Prikaži uneseni
+                broj</button>
+              <button type="button" class="btn btn-secondary" onclick="greetGuestPrompt()">Unesi ime (prompt)</button>
+            </div>
+
+            <div class="lab-result">Formatirano ime: <span id="formatted-name">-</span></div>
+            <div class="lab-result">Uneseni broj: <span id="entered-number">-</span></div>
+          </section>
+
           <div class="form-group">
             <label for="c-ime">Full name *</label>
             <input type="text" id="c-ime" placeholder="Your name" required />
@@ -178,7 +254,15 @@
 
           <div class="form-group">
             <label for="c-poruka">Message *</label>
-            <textarea id="c-poruka" placeholder="Write your message..." required></textarea>
+            <textarea id="c-poruka" maxlength="140" placeholder="Write your message..." required></textarea>
+
+            <div class="message-stats">
+              <div>Broj znakova: <span id="char-count">0</span> / 140</div>
+              <div>Preostalo znakova: <span id="char-remaining">140</span></div>
+              <div>Prvih 10 znakova: <span id="first-ten">-</span></div>
+              <div>Tekst u VELIKA slova: <span id="text-upper">-</span></div>
+              <div>Tekst u mala slova: <span id="text-lower">-</span></div>
+            </div>
           </div>
 
           <button class="btn btn-primary" style="width:100%;" onclick="sendMsg()">Send message 📧</button>
@@ -213,6 +297,69 @@
   </footer>
 
   <script>
+    const contactNameInput = document.getElementById('c-ime');
+    const messageInput = document.getElementById('c-poruka');
+
+    function toProperCase(text) {
+      return text
+        .toLowerCase()
+        .split(/\s+/)
+        .filter(Boolean)
+        .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+        .join(' ');
+    }
+
+    function greetGuestPrompt() {
+      const rawName = prompt('Upiši svoje ime za narudžbu:');
+      if (rawName === null) return;
+
+      const cleanedName = toProperCase(rawName.trim());
+      document.getElementById('formatted-name').textContent = cleanedName || '-';
+
+      if (!cleanedName) {
+        alert('Nisi unio ime. Pokušaj ponovno.');
+        return;
+      }
+
+      alert(`Bok, ${cleanedName}! Dobrodošao/la u Shark\'s Pizza 🍕`);
+    }
+
+    function showEnteredNumber() {
+      const numberValue = document.getElementById('promo-broj').value;
+      const output = document.getElementById('entered-number');
+
+      if (numberValue === '') {
+        output.textContent = '-';
+        alert('Prvo unesi broj stola ili kupona.');
+        return;
+      }
+
+      output.textContent = numberValue;
+      alert(`Uneseni broj je: ${numberValue}`);
+    }
+
+    function updateMessageStats() {
+      const text = messageInput.value;
+      const max = 140;
+      const length = text.length;
+
+      document.getElementById('char-count').textContent = String(length);
+      document.getElementById('char-remaining').textContent = String(max - length);
+      document.getElementById('first-ten').textContent = text.slice(0, 10) || '-';
+      document.getElementById('text-upper').textContent = text.toUpperCase() || '-';
+      document.getElementById('text-lower').textContent = text.toLowerCase() || '-';
+    }
+
+    function normalizeContactName() {
+      const normalized = toProperCase(contactNameInput.value.trim());
+      contactNameInput.value = normalized;
+      document.getElementById('formatted-name').textContent = normalized || '-';
+    }
+
+    contactNameInput.addEventListener('blur', normalizeContactName);
+    messageInput.addEventListener('input', updateMessageStats);
+    updateMessageStats();
+
     function sendMsg() {
       const ime = document.getElementById('c-ime').value.trim();
       const email = document.getElementById('c-email').value.trim();
